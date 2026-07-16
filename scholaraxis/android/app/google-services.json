@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "99619338534",
+    "project_id": "scholaraxis-497ab",
+    "storage_bucket": "scholaraxis-497ab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99619338534:android:e17080bf06b701e1c1e9e7",
+        "android_client_info": {
+          "package_name": "com.example.scholaraxis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBls2aCFm_VKRrlKjOf7mBh1EvuVYDVXnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99619338534:android:34f8297de8ae30b9c1e9e7",
+        "android_client_info": {
+          "package_name": "com.scholaraxis.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBls2aCFm_VKRrlKjOf7mBh1EvuVYDVXnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

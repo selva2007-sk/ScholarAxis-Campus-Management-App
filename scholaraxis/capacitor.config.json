@@ -1,0 +1,10 @@
+{
+  "appId": "com.manigandan.scholaraxis",
+  "appName": "ScholarAxis",
+  "webDir": "dist",
+  "plugins": {
+    "StatusBar": {
+      "overlaysWebView": false
+    }
+  }
+}

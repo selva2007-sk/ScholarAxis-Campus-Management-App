@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "808837415014",
+    "project_id": "scholaraxis-fc50d",
+    "storage_bucket": "scholaraxis-fc50d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808837415014:android:4a38a423b7d46d9da86da7",
+        "android_client_info": {
+          "package_name": "com.manigandan.scholaraxis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8ozWK45Uq6bZvOjlW3uZnpg_vdIM41E0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

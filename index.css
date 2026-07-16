@@ -1,0 +1,60 @@
+/* Global safe-area + fixed header layout helpers */
+:root {
+  /* Prefer native safe-area inset and support older iOS constant() syntax */
+  --app-safe-top: env(safe-area-inset-top, 0px);
+  --app-header-pad-y: clamp(0.875rem, 2.4vw, 1.125rem);
+  --app-content-top-space: clamp(1rem, 3vw, 1.5rem);
+
+  /* header measured at runtime */
+  --app-header-height: 0px;
+  --app-header-total: var(--app-header-height, 0px);
+  --app-main-left: 0px;
+  --app-main-right: 0px;
+}
+
+@supports (padding-top: max(0px)) {
+  :root {
+    --app-safe-top: max(env(safe-area-inset-top, 0px), constant(safe-area-inset-top));
+  }
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+/* Make header visually unchanged but fixed under the system status bar.
+   We avoid hardcoded sizes; runtime JS will compute correct left/right/height values. */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: var(--app-main-left, 0px);
+  right: var(--app-main-right, 0px);
+  width: auto;
+  padding-top: calc(var(--app-safe-top, 0px) + var(--app-header-pad-y, 0.875rem)) !important;
+  padding-bottom: var(--app-header-pad-y, 0.875rem) !important;
+  z-index: 9999;
+  will-change: transform;
+}
+
+/* Main content should never be hidden under the fixed header.
+   Padding uses only runtime-measured header height plus existing screen spacing. */
+.app-content {
+  padding-top: calc(
+    var(--app-header-total, var(--app-header-height, 0px)) +
+    var(--app-content-top-space, 0px)
+  ) !important;
+}
+
+/* Ensure modals or full-screen overlays that rely on 'top-safe' continue to work */
+.top-safe {
+  top: var(--app-safe-top, 0px) !important;
+}
+
+/* Small utility to ensure fixed elements inside the main area don't overflow horizontally */
+.app-main-fixed-guard {
+  left: var(--app-main-left, 0px);
+  right: var(--app-main-right, 0px);
+}

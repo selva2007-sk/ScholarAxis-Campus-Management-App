@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Current app uses custom role/password login and does not use Firebase Auth yet.
+    // Keep permissive rules for now so existing app flows continue to work after migration.
+    // Tighten this once Firebase Auth is integrated.
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
